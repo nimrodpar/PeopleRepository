@@ -6,6 +6,7 @@ A simple example for having persistent objects in python using the Repository pa
 ```bash
 pip install -r requirements.txt
 python people_repository/manage.py version_control sqlite:///people.db people_repository  # setup db
+migrate manage manage.py --repository=people_repository --url=sqlite:///people.db  # create manage.py
 python manage.py upgrade  # run migrations
 ```
 
