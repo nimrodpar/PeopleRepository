@@ -8,7 +8,7 @@ from sqlalchemy.orm import (sessionmaker, registry)
 
 import model
 
-engine = create_engine('sqlite:///people.db', echo=True)  # can be switched out by any engine
+engine = create_engine('sqlite:///people.db', echo=False)  # can be switched out by any engine
 Session = sessionmaker(engine)
 
 mapper_registry = registry()
