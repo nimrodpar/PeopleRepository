@@ -1,0 +1,2 @@
+sqlalchemy==1.4.27
+sqlalchemy-migrate==0.13.0
