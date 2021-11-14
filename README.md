@@ -2,6 +2,8 @@
 
 A simple example for having persistent objects in python using the Repository pattern in a way that is decoupled from the ORM.
 
+Note: For completeness, the repository includes migrations which are heavily coupled with `sqlalchemy`. These can be replace by any ORM and migration manager (however the `sqlalchemy-migrate` one is really nice.
+
 ## Setup
 ```bash
 pip install -r requirements.txt
@@ -17,11 +19,12 @@ from repository import PeopleRepository
 from model import Person
 from datetime import datetime
 
-rp = PeopleRepository()
+r = PeopleRepository()
 
-rp.add(Person(1, "Mike", datetime.now(), "IL"))
+r.add(Person(1337, "Mike", datetime.now(), "IL"))
 
-p = rp.get(1)
+assert not r.get(1)
 
+p = r.get(1337)
 assert p.name == "Mike"
 ```
